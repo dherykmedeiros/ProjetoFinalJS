@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#email-section, #calendar-container {
+  padding: 20px;
+}
+
+.calendar-section, .schedule-section {
+  padding: 20px;
+  width: 50%;
+}
+
+.calendar-section {
+  border-right: 1px solid #333;
+}
+
+.calendar-header h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day, .header {
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.header {
+  font-weight: bold;
+  color: #888;
+}
+
+.day {
+  background-color: #252525;
+  cursor: pointer;
+}
+
+.day.selected {
+  background-color: #4caf50;
+}
+
+.schedule-list {
+  margin-top: 10px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #2b2b2b;
+}
+
+.day.disabled {
+  background-color: #555;
+  pointer-events: none;
+  color: #888;
+}
+
+#event-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#event-form input, #event-form button {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.day.has-event {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.cancel-button {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #f44336;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsividade para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .calendar-section, .schedule-section {
+    width: 100%;
+    padding: 10px;
+    border: none; /* Remove a borda entre as seções */
+  }
+
+  /* Mover a agenda para baixo do calendário */
+  #calendar-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calendar {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .day, .header {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+
+  .day, .header {
+    padding: 5px;
+  }
+
+  button {
+    padding: 8px;
+  }
+
+  /* Mover a agenda para baixo do calendário em telas muito pequenas */
+  .calendar-section, .schedule-section {
+    width: 100%;
+    padding: 10px;
+  }
+}

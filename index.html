@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário de Agendamento - Outubro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="email-section">
+      <h3>Informe seu e-mail para acessar o calendário</h3>
+      <form id="email-form">
+        <input type="email" id="user-email" placeholder="Seu e-mail" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div id="calendar-container" style="display: none;">
+      <div class="calendar-section">
+        <div class="calendar-header">
+          <h2>Outubro 2024</h2>
+        </div>
+        <div class="calendar" id="calendar"></div>
+      </div>
+      <div class="schedule-section">
+        <h3 id="selected-date">Selecionar Data</h3>
+        <div id="event-details"></div>
+        <form id="event-form" style="display:none;">
+          <input type="text" id="event-title" placeholder="Título do Evento" required>
+          <input type="time" id="event-time" required>
+          <button type="submit">Adicionar Evento</button>
+        </form>
+        <div class="schedule-list" id="scheduleList"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Carregar o EmailJS primeiro -->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+  <!-- Carregar o script personalizado depois -->
+  <script src="script.js"></script>
+</body>
+</html>
